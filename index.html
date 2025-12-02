@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>OVE – November 2025 Highlights</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    /* Resets */
+    body, html {
+      margin: 0;
+      padding: 0;
+      background: #050816;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* Layout */
+    .wrapper {
+      width: 100%;
+      background: radial-gradient(circle at top, #1041a5 0, #050816 55%, #02040b 100%);
+      padding: 32px 12px;
+      box-sizing: border-box;
+    }
+
+    .newsletter {
+      max-width: 1200px;
+      margin: 0 auto;
+      /* background: rgba(5, 8, 22, 0.94); */
+      border-radius: 24px;
+      border: 1px solid rgba(157, 178, 255, 0.18);
+      box-shadow: 0 24px 80px rgba(0, 0, 0, 0.7);
+      overflow: hidden;
+      color: #f5f7ff;
+    }
+
+    /* Header */
+    .header {
+      padding: 28px 32px 24px;
+      background: linear-gradient(135deg, rgba(16,65,165,0.9), rgba(131,47,131,0.9));
+      position: relative;
+      overflow: hidden;
+    }
+
+    .header::before {
+      content: "";
+      position: absolute;
+      inset: -40%;
+      background:
+        radial-gradient(circle at 0% 0%, rgba(255,255,255,0.14) 0, transparent 50%),
+        radial-gradient(circle at 100% 20%, rgba(255,255,255,0.16) 0, transparent 50%),
+        radial-gradient(circle at 50% 120%, rgba(0,0,0,0.6) 0, transparent 55%);
+      opacity: 0.9;
+      mix-blend-mode: screen;
+    }
+
+    .header-inner {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .brand-mark {
+      width: 80px;
+        height: 80px;
+        border-radius: 16px;
+        background: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      font-weight: 800;
+      color: #050816;
+      box-shadow: 0 10px 24px rgba(0,0,0,0.35);
+      flex-shrink: 0;
+    }
+
+    .header-text {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .eyebrow {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: rgba(229, 237, 255, 0.85);
+      margin-bottom: 6px;
+    }
+
+    .title {
+      font-size: 22px;
+      font-weight: 700;
+      line-height: 1.3;
+      margin: 0 0 6px;
+    }
+
+    .subtitle {
+      font-size: 13px;
+      color: rgba(241, 245, 255, 0.82);
+      max-width: 420px;
+    }
+
+    .header-tag {
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: rgba(5, 8, 22, 0.36);
+      border: 1px solid rgba(209, 213, 255, 0.35);
+      font-size: 11px;
+      font-weight: 500;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-left: auto;
+      color: #e5e7ff;
+      white-space: nowrap;
+    }
+
+    .header-tag span.dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #22c55e;
+      box-shadow: 0 0 0 5px rgba(34,197,94,0.25);
+    }
+
+    /* Body */
+    .body {
+      padding: 24px 24px 28px;
+    }
+
+    .section {
+      margin-bottom: 22px;
+      border-radius: 18px;
+      border: 1px solid rgba(148, 163, 255, 0.14);
+      background: radial-gradient(circle at top left, rgba(148,163,255,0.08), transparent 55%);
+      padding: 16px 18px 18px;
+    }
+
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 12px;
+    }
+
+    .section-icon {
+      width: 26px;
+      height: 26px;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.9);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      flex-shrink: 0;
+    }
+
+    .section-title {
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: #e5e7ff;
+    }
+
+    .section-pill {
+      margin-left: auto;
+      font-size: 11px;
+      padding: 4px 9px;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.8);
+      border: 1px dashed rgba(148, 163, 255, 0.5);
+      color: rgba(191, 219, 254, 0.9);
+      white-space: nowrap;
+    }
+
+    /* Grid stats */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+    }
+
+    .stat-card {
+      border-radius: 14px;
+      background: rgba(15, 23, 42, 0.95);
+      padding: 10px 11px;
+      border: 1px solid rgba(30, 64, 175, 0.6);
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
+
+    .stat-label {
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: rgba(148, 163, 255, 0.9);
+    }
+
+    .stat-value {
+      font-size: 16px;
+      font-weight: 650;
+      color: #f9fafb;
+    }
+
+    .stat-sub {
+      font-size: 12px;
+      color: rgba(209, 213, 255, 0.85);
+    }
+
+    /* Two-column layout */
+    .cols-2 {
+      display: grid;
+      grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+      gap: 12px;
+    }
+
+    .list-bullets {
+      margin: 0;
+      padding-left: 16px;
+      font-size: 14px;
+      color: rgba(226, 232, 255, 0.9);
+    }
+
+    .list-bullets li {
+      margin-bottom: 4px;
+    }
+
+    /* Product cards */
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+      margin-top: 4px;
+    }
+
+    .product-card {
+      border-radius: 14px;
+      background: rgba(15, 23, 42, 0.96);
+      border: 1px solid rgba(88, 28, 135, 0.7);
+      padding: 10px 11px 11px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .product-tag {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: rgba(196, 181, 253, 0.85);
+      margin-bottom: 3px;
+    }
+
+    .product-name {
+      font-size: 13px;
+      font-weight: 600;
+      color: #f9fafb;
+      margin-bottom: 3px;
+    }
+
+    .product-domain {
+      font-size: 13px;
+      color: rgba(191, 219, 254, 0.9);
+      margin-bottom: 4px;
+    }
+
+    .product-update {
+      font-size: 12px;
+      color: rgba(226, 232, 255, 0.9);
+    }
+
+    .product-orb {
+      position: absolute;
+      right: -18px;
+      bottom: -18px;
+      width: 60px;
+      height: 60px;
+      border-radius: 999px;
+      background: radial-gradient(circle at 30% 0%, rgba(255,255,255,0.8), rgba(96,165,250,0.4), rgba(15,23,42,0.9));
+      opacity: 0.35;
+      mix-blend-mode: screen;
+    }
+
+    /* Client spotlight */
+    .client-row {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 8px;
+      margin-top: 4px;
+      font-size: 12px;
+    }
+
+    .client-chip {
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.96);
+      border: 1px solid rgba(148, 163, 255, 0.52);
+      padding: 7px 9px;
+      display: flex;
+      align-items: flex-start;
+      gap: 6px;
+      color: rgba(226, 232, 255, 0.92);
+    }
+
+    .client-chip span.icon {
+      font-size: 15px;
+      margin-top: 1px;
+    }
+
+    /* Metric strip */
+    .metric-strip {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 8px;
+      margin-top: 4px;
+    }
+
+    .metric {
+      border-radius: 12px;
+      background: rgba(15, 23, 42, 0.96);
+      border: 1px solid rgba(55, 65, 194, 0.75);
+      padding: 8px 9px;
+    }
+
+    .metric-label {
+      font-size: 15px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: rgba(156, 163, 255, 0.98);
+      margin-bottom: 2px;
+    }
+
+    .metric-value {
+      font-size: 15px;
+      font-weight: 650;
+      color: #f9fafb;
+    }
+
+    .metric-note {
+      font-size: 13px;
+      color: rgba(209, 213, 255, 0.85);
+    }
+
+    /* Roadmap */
+    .roadmap {
+      margin-top: 4px;
+      border-left: 1px dashed rgba(148, 163, 255, 0.6);
+      padding-left: 10px;
+    }
+
+    .roadmap-item {
+      position: relative;
+      padding-left: 10px;
+      margin-bottom: 8px;
+    }
+
+    .roadmap-item::before {
+      content: "";
+      position: absolute;
+      left: -11px;
+      top: 4px;
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: radial-gradient(circle, #ffffff 0, #22c55e 55%, #16a34a 100%);
+      box-shadow: 0 0 0 4px rgba(34,197,94,0.22);
+    }
+
+    .roadmap-title {
+      font-size: 14px;
+      font-weight: 550;
+      color: #e5e7ff;
+      margin-bottom: 1px;
+    }
+
+    .roadmap-text {
+      font-size: 12px;
+      color: rgba(191, 219, 254, 0.9);
+    }
+
+    /* CTA */
+    .cta-row {
+      margin-top: 10px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .cta-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 9px 18px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, #22c55e, #16a34a);
+      color: #022c22;
+      font-size: 15px;
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 10px 30px rgba(34,197,94,0.55);
+      white-space: nowrap;
+    }
+
+    .cta-btn:hover {
+        background: linear-gradient(135deg, #22c55e, #68d18e);
+      box-shadow: 0 14px 40px rgba(34,197,94,0.75);
+    }
+
+    .cta-btn span {
+      margin-left: 6px;
+      font-size: 16px;
+    }
+
+    .cta-caption {
+      font-size: 13px;
+      color: rgba(156, 163, 255, 0.95);
+    }
+
+    /* Footer */
+    .footer {
+      border-top: 1px solid rgba(30, 64, 175, 0.7);
+      padding: 12px 24px 18px;
+      font-size: 13px;
+      color: rgba(148, 163, 255, 0.85);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 6px;
+      background: radial-gradient(circle at top, rgba(15,23,42,0.9), rgba(15,23,42,0.98));
+    }
+
+    .footer a {
+      color: rgba(191, 219, 254, 0.98);
+    }
+
+    /* Responsive */
+    @media (max-width: 640px) {
+      .header {
+        padding: 22px 18px 18px;
+      }
+      .body {
+        padding: 18px 14px 22px;
+      }
+      .header-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .header-tag {
+        margin-left: 0;
+      }
+      .stats-grid,
+      .client-row,
+      .metric-strip,
+      .product-grid,
+      .cols-2 {
+        grid-template-columns: minmax(0, 1fr);
+      }
+      .newsletter {
+        border-radius: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <div class="newsletter">
+      <!-- Header -->
+      <div class="header">
+        <div class="header-inner">
+          <div class="brand-mark"><img src="favicon.webp" width="100%" alt="OVE"></div>
+          <div class="header-text">
+            <div class="eyebrow">November 2025 Highlights</div>
+            <h1 class="title">OVE is scaling remote engineering and GenAI outcomes worldwide.</h1>
+            <p class="subtitle">
+              From staff augmentation to full-stack AI delivery, November was all about faster onboarding,
+              smarter automation and real product impact.
+            </p>
+          </div>
+          <div class="header-tag">
+            <span class="dot"></span>
+            <span>Global teams • AI powered</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Body -->
+      <div class="body">
+        <!-- Global Staff Augmentation -->
+        <div class="section">
+          <div class="section-header">
+            <div class="section-icon">🚀</div>
+            <div class="section-title">Global IT Staff Augmentation</div>
+            <div class="section-pill">120+ engineers live on projects</div>
+          </div>
+
+          <div class="stats-grid">
+            <div class="stat-card">
+              <div class="stat-label">Developers deployed</div>
+              <div class="stat-value">120+</div>
+              <div class="stat-sub">Full stack, mobile, cloud, AI/ML, UI/UX, DevOps</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-label">Countries served</div>
+              <div class="stat-value">8</div>
+              <div class="stat-sub">US, UK, UAE, Australia, Singapore, India, Canada, Germany</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-label">Avg onboarding</div>
+              <div class="stat-value">5–7 days</div>
+              <div class="stat-sub">From role brief to fully onboarded engineer</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- GenAI + Products -->
+        <div class="section" style="position: relative; overflow: hidden;">
+          <div class="section-header" style="position: relative; z-index: 20;">
+            <div class="section-icon">🤖</div>
+            <div class="section-title">GenAI Division & Product Portfolio</div>
+            <div class="section-pill">35+ GenAI specialists</div>
+          </div>
+
+          <div class="cols-2" style="position: relative; z-index: 20;">
+            <div>
+              <p style="font-size:12px; color:rgba(226,232,255,0.9); margin:0 0 6px;">
+                Demand for AI driven transformation kept rising, and OVE scaled to match it:
+              </p>
+              <ul class="list-bullets">
+                <li>AI workflow automation across products and ops</li>
+                <li>LLM and RAG integrations for knowledge heavy teams</li>
+                <li>AI copilots and conversational agents for end users</li>
+                <li>Data annotation and fine tuning pipelines end to end</li>
+              </ul>
+              <p style="font-size:11px; color:rgba(148,163,255,0.9); margin-top:6px;">
+                OVE builds and ships AI from ideation to deployment, with security and governance baked in.
+              </p>
+            </div>
+
+            <div>
+              <div style="font-size:11px; text-transform:uppercase; letter-spacing:0.08em; color:rgba(156,163,255,0.98); margin-bottom:4px;">
+                November product milestones
+              </div>
+              <div class="product-grid">
+                <div class="product-card">
+                  <div class="product-tag">HR & Recruitment</div>
+                  <div class="product-name">FlyByHire</div>
+                  <div class="product-domain">AI powered candidate screening</div>
+                  <div class="product-update">
+                    Launched multi role auto ranking engine for faster shortlists.
+                  </div>
+                  <div class="product-orb"></div>
+                </div>
+                <div class="product-card">
+                  <div class="product-tag">EdTech / Toys</div>
+                  <div class="product-name">ScoobiesAI</div>
+                  <div class="product-domain">Toys that teach through play</div>
+                  <div class="product-update">
+                    Released voice learning beta for more natural child interactions.
+                  </div>
+                  <div class="product-orb"></div>
+                </div>
+                <div class="product-card">
+                  <div class="product-tag">Cybersecurity</div>
+                  <div class="product-name">ApateAI</div>
+                  <div class="product-domain">Scam and fraud disruption</div>
+                  <div class="product-update">
+                    Added multilingual decoy trap models to detect global threat patterns.
+                  </div>
+                  <div class="product-orb"></div>
+                </div>
+                <div class="product-card">
+                  <div class="product-tag">Retail / CPG</div>
+                  <div class="product-name">DataPartnersAI</div>
+                  <div class="product-domain">Buyer insights & pricing</div>
+                  <div class="product-update">
+                    Completed first enterprise rollout for data driven retail decisions.
+                  </div>
+                  <div class="product-orb"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div style="position: absolute; top:0; bottom:0; left:0; right:0; background-color: #02040b; opacity: 0.6; z-index: 1;"></div>
+          <img src="aibg.webp" alt="AI Background" style="width: 100%;border-radius: 12px;position: absolute;top: 0;z-index: 0;object-fit: cover;background-position: center;height: 100%;left: 0;" />
+        </div>
+
+        <!-- Client Spotlight -->
+        <div class="section">
+          <div class="section-header">
+            <div class="section-icon">🔍</div>
+            <div class="section-title">Client Spotlight</div>
+            <div class="section-pill">High impact delivery this month</div>
+          </div>
+
+          <div class="client-row">
+            <div class="client-chip">
+              <span class="icon">🌉</span>
+              <span>Silicon Valley SaaS scaled from 4 to 16 remote developers in 6 weeks.</span>
+            </div>
+            <div class="client-chip">
+              <span class="icon">💳</span>
+              <span>UK fintech deployed AI enabled compliance automation across workflows.</span>
+            </div>
+            <div class="client-chip">
+              <span class="icon">🛒</span>
+              <span>Singapore retail group activated GenAI based analytics and forecasting.</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Metrics + Roadmap -->
+        <div class="section">
+          <div class="section-header">
+            <div class="section-icon">📈</div>
+            <div class="section-title">Key Numbers & What Is Next</div>
+            <div class="section-pill">Looking into December and Q1 2026</div>
+          </div>
+
+          <div class="metric-strip">
+            <div class="metric">
+              <div class="metric-label">Developer retention</div>
+              <div class="metric-value">92%</div>
+              <div class="metric-note">Stable, long term teams for clients</div>
+            </div>
+            <div class="metric">
+              <div class="metric-label">New clients onboarded</div>
+              <div class="metric-value">35</div>
+              <div class="metric-note">Across ANZ, North America, EU, APAC</div>
+            </div>
+            <div class="metric">
+              <div class="metric-label">GenAI pilots</div>
+              <div class="metric-value">4</div>
+              <div class="metric-note">Enterprise scale experiments in parallel</div>
+            </div>
+          </div>
+
+          <div class="roadmap">
+            <div class="roadmap-item">
+              <div class="roadmap-title">AI Copilot deployment support</div>
+              <div class="roadmap-text">Guiding enterprises from proof of concept to secure production rollout.</div>
+            </div>
+            <div class="roadmap-item">
+              <div class="roadmap-title">OVE Academy launch</div>
+              <div class="roadmap-text">Upskilling engineers in AI and cloud for future ready squads.</div>
+            </div>
+            <div class="roadmap-item">
+              <div class="roadmap-title">Near shore pods for US & EU</div>
+              <div class="roadmap-text">Extended coverage and tighter collaboration windows.</div>
+            </div>
+            <div class="roadmap-item">
+              <div class="roadmap-title">Stronger SLA backed delivery</div>
+              <div class="roadmap-text">Sharper communication, predictability and governance for global teams.</div>
+            </div>
+          </div>
+
+          <div class="cta-row">
+            <a href="https://optimalvirtualemployee.com/contact-us" class="cta-btn">
+              Book a strategy call <span>↗</span>
+            </a>
+            <div class="cta-caption">
+              Explore how OVE can help you scale engineering and GenAI without losing control on quality or cost.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer -->
+      <div class="footer">
+        <div>
+          © 2025 Optimal Virtual Employee. All rights reserved.
+        </div>
+        <div>
+          <a href="https://optimalvirtualemployee.com">Visit website</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
